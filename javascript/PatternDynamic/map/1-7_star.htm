@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+
+        .static {
+            width: 33.33%;
+            float: left;
+        }
+
+        input {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="5">
+    <input type="submit"
+        onclick="oneDynamic(), twoDynamic(),threeDynamic(),fourDynamic(),fiveDynamic(),sixDynamic(),sevenDynamic()"
+        value="submit"></button>
+
+    <input type="submit" onclick="oneMap(), twoMap(),threeMap(),fourMap(),fiveMap(),sixMap(),sevenMap()"
+        value="map"></button>
+
+    <div class="static">
+
+
+        <div p id="patternprint">
+
+        </div>
+
+        <div p id="patternprint2">
+
+        </div>
+
+        <div p id="patternprint3">
+
+        </div>
+
+        <div p id="patternprint4">
+
+        </div>
+
+        <div p id="patternprint5">
+
+        </div>
+
+        <div p id="patternprint6">
+
+        </div>
+
+        <div p id="patternprint7">
+
+        </div>
+
+    </div>
+
+    <div class="static">
+        <div p id="patternprintDynamic">
+
+        </div>
+
+        <div p id="patternprint2Dynamic">
+
+        </div>
+
+        <div p id="patternprint3Dynamic">
+
+        </div>
+
+        <div p id="patternprint4Dynamic">
+
+        </div>
+
+        <div p id="patternprint5Dynamic">
+
+        </div>
+
+        <div p id="patternprint6Dynamic">
+
+        </div>
+
+        <div p id="patternprint7Dynamic">
+
+        </div>
+    </div>
+
+    <div class="static">
+        <div p id="patternprintMap">
+
+        </div>
+
+        <div p id="patternprint2Map">
+
+        </div>
+
+        <div p id="patternprint3Map">
+
+        </div>
+
+        <div p id="patternprint4Map">
+
+        </div>
+
+        <div p id="patternprint5Map">
+
+        </div>
+
+        <div p id="patternprint6Map">
+
+        </div>
+
+        <div p id="patternprint7Map">
+
+        </div>
+    </div>
+
+
+    <script>
+
+        onePattern();
+        twoPatetrn();
+        threePattern();
+        fourPattern();
+        fivePattern();
+        sixPattern();
+        sevenPattern();
+
+        function onePattern() {
+            let pattern = "";
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    pattern += "*";
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+
+        function twoPatetrn() {
+            let pattern = "";
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= i; j++) {
+                    pattern += "*";
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint2").innerHTML = pattern;
+        }
+
+
+        function threePattern() {
+            let pattern = "";
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (j <= 6 - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint3").innerHTML = pattern;
+        }
+
+
+        function fourPattern() {
+            let pattern = "";
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (j >= 6 - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint4").innerHTML = pattern;
+        }
+
+
+        function fivePattern() {
+            let pattern = "";
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (j >= 6 - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint5").innerHTML = pattern;
+
+        }
+
+        function sixPattern() {
+
+            let pattern = "";
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (j >= i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint6").innerHTML = pattern;
+        }
+
+
+        function sevenPattern() {
+            let pattern = "";
+            for (let i = 1; i < 8; i++) {
+                for (let j = 1; j < 8; j++) {
+                    if (i == j || j == 8 - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint7").innerHTML = pattern;
+        }
+
+
+
+
+        //dynamic
+
+        function oneDynamic() {
+
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    pattern += "*";
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprintDynamic").innerHTML = pattern;
+        }
+
+
+        function twoDynamic() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= i; j++) {
+                    pattern += "*";
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint2Dynamic").innerHTML = pattern;
+        }
+
+
+        function threeDynamic() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j <= (line + 1) - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint3Dynamic").innerHTML = pattern;
+        }
+
+
+        function fourDynamic() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j >= (line + 1) - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint4Dynamic").innerHTML = pattern;
+        }
+
+
+        function fiveDynamic() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j >= (line + 1) - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint5Dynamic").innerHTML = pattern;
+
+        }
+
+        function sixDynamic() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j >= i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint6Dynamic").innerHTML = pattern;
+        }
+
+
+        function sevenDynamic() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i < line; i++) {
+                for (let j = 1; j < line; j++) {
+                    if (i == j || j == line - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint7Dynamic").innerHTML = pattern;
+        }
+
+
+        //using map
+        
+        function oneMap() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+
+            Array(line).fill().map((val, i) => {
+                Array(line).fill().map((val, j) => {
+
+                    pattern += "*";
+                })
+                pattern += "<br>";
+
+            });
+
+            document.getElementById("patternprintMap").innerHTML = pattern;
+
+        }
+
+
+        function twoMap() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+
+            Array(line+1).fill().map((val, i) => {
+                Array(i).fill().map((val, j) => {
+
+                    pattern += "*";
+                })
+                pattern += "<br>";
+
+            });
+
+            document.getElementById("patternprint2Map").innerHTML = pattern;
+        }
+
+
+        function threeMap() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+          
+
+            Array(line).fill().map((val, i) => {
+                Array(line).fill().map((val, j) => {
+
+                    if (j <line - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                })
+                pattern += "<br>";
+
+            });
+
+            document.getElementById("patternprint3Map").innerHTML = pattern;
+        }
+
+
+        function fourMap() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+        
+            Array(line+1).fill().map((val, i) => {
+                Array(line).fill().map((val, j) => {
+
+                    if (j >= (line) - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                })
+                pattern += "<br>";
+
+            });
+
+            document.getElementById("patternprint4Map").innerHTML = pattern;
+        }
+
+
+        function fiveMap() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+        
+            Array(line+1).fill().map((val, i) => {
+                Array(line).fill().map((val, j) => {
+
+                    if (j >= line  - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                })
+                pattern += "<br>";
+
+            });
+
+
+            document.getElementById("patternprint5Map").innerHTML = pattern;
+
+        }
+
+        function sixMap() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+
+            Array(line).fill().map((val, i) => {
+                Array(line).fill().map((val, j) => {
+
+                    if (j >= i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                })
+                pattern += "<br>";
+
+            });
+            document.getElementById("patternprint6Map").innerHTML = pattern;
+        }
+
+
+        function sevenMap() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+
+            Array(line+1).fill().map((val, i) => {
+                Array(line+1).fill().map((val, j) => {
+
+                    if (i == j || j == line - i) {
+                        pattern += j;
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                })
+                pattern += "<br>";
+
+            });
+            
+            document.getElementById("patternprint7Map").innerHTML = pattern;
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+
+        input {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="5">
+    <input type="submit" onclick="callDynamic()" value="submit"></button>
+    <input type="submit" onclick="patternMapShow()" value="map"></button>
+
+
+    <div p id="patternprint">
+    </div>
+    <div p id="patternprintD">
+    </div>
+
+    <div p id="patternMapShow">
+
+    </div>
+
+    <script>
+
+        callPattern();
+        
+
+        function callPattern() {
+            let line = 5;
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= (line * 2) - 1; j++) {
+                    if (i == 1) {
+                        pattern += "&nbsp;";
+                    }
+                    else if (j > 5 - i && j < 5 + i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            for (let k = 1; k < line - 1; k++) {
+                for (let m = 1; m <= (line * 2) - 1; m++) {
+                    if (m > k && m <= 9 - k) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let row = 1; row < (line /2 )+1; row++) {
+                for (let col = 1; col <= (line * 2) - 1; col++) {
+                    if (col > 5-row && col < 5 + row) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+        function callDynamic() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= (line * 2) - 1; j++) {
+                    if (i == 1) {
+                        pattern += "&nbsp;";
+                    }
+                    else if (j > line - i && j < line + i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            for (let k = 1; k < line - 1; k++) {
+                for (let m = 1; m <= (line * 2) - 1; m++) {
+                    if (m > k && m <= ((line*2)-1) - k) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let row = 1; row < (line /2 )+1; row++) {
+                for (let col = 1; col <= (line * 2) - 1; col++) {
+                    if (col > line-row && col < line + row) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprintD").innerHTML = pattern;
+        }
+        function patternMapShow() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= (line * 2) - 1; j++) {
+                    if (i == 1) {
+                        pattern += "&nbsp;";
+                    }
+                    else if (j > line - i && j < line + i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            for (let k = 1; k < line - 1; k++) {
+                for (let m = 1; m <= (line * 2) - 1; m++) {
+                    if (m > k && m <= ((line*2)-1) - k) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let row = 1; row < (line /2 )+1; row++) {
+                for (let col = 1; col <= (line * 2) - 1; col++) {
+                    if (col > line-row && col < line + row) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternMapShow").innerHTML = pattern;
+        }
+
+    </script>
+</body>
+
+</html>

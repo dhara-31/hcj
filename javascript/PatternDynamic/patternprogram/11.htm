@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div p id="patternprint">
+    </div>
+    <div p id="patternprint1">
+    </div>
+    <script>
+
+        elevenPattern();
+
+
+        function elevenPattern() {
+            let line = 6;
+            let pattern = "";
+            {
+                for (let i = 1; i <= line; i++) {
+                    for (let j = 1; j <= i; j++) {
+                        if (i % 2 == 0) {
+                            if (j % 2 == 0) {
+                                pattern += "1";
+                            }
+                            else {
+                                pattern += "0";
+                            }
+                        }
+                        else {
+                            if (j % 2 == 0) {
+                                pattern += "0";
+                            }
+                            else {
+                                pattern += "1";
+                            }
+                        }
+                    }
+                    pattern += "<br>";
+                }
+                document.getElementById("patternprint").innerHTML = pattern;
+            }
+
+
+            // {
+               // map
+            //     Array(line).fill().map((val, i) => {
+            //         Array(i).fill().map((val, j) => {
+            //             if (i % 2 == 0) {
+            //                 if (j % 2 == 0) {
+            //                     pattern += "1";
+            //                 }
+            //                 else {
+            //                     pattern += "0";
+            //                 }
+            //             }
+            //             else {
+            //                 if (j % 2 == 0) {
+            //                     pattern += "0";
+            //                 }
+            //                 else {
+            //                     pattern += "1";
+            //                 }
+            //             }
+            //             pattern += "<br>";
+            //         })
+            //         document.getElementById("patternprint1").innerHTML = pattern;
+
+
+            //     })
+            // }
+
+        }
+
+    </script>
+</body>
+
+</html>

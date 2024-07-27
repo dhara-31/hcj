@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+            font-weight: bold;
+        }
+
+        input {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="15">
+    <input type="submit" onclick="dynamicPattern()" value="submit"></button>
+
+    <input type="submit" onclick="patternMapShow()" value="map"></button>
+
+
+    <div p id="patternprint">
+    </div>
+
+    <div p id="patternMapShow">
+
+    </div>
+    <script>
+
+        dynamicPattern();
+        function dynamicPattern() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+            let pattern = "";
+
+            if (line > 9) {
+
+
+                if (line > 30) {
+                    document.body.style.zoom = "50%"
+                }
+                for (let i = 1; i <= line; i++) {
+                    for (let j = 1; j <= line * 6; j++) {
+
+                        if (j >= (line + 1) - i && j <= (line + 4) - i ||
+                            (j >= (line + 3) + i && j <= (line + 6) + i) ||
+                            (j >= ((line * 2) + 8 + line - 1 - i) && j <= (((line * 2) + 8 + line - 1) + 3 - i))
+                            || (j >= ((line * 2) + 8 + line - 1) + 3 && j <= ((line * 2) + 8 + line - 1) + 3 + line)
+                            || (i == Math.ceil(line / 2) && j >= line * 6 - 3) ||
+                            (i == Math.ceil((line / 2) + 1) && j >= line * 6 - 5 && j <= line * 6 - 2)
+                        ) {
+                            pattern += "*&nbsp;";
+                        } else {
+                            pattern += "&ensp;"
+                        }
+                    }
+                    pattern += "<br>";
+                }
+                document.getElementById("patternprint").innerHTML = pattern;
+            }
+            else {
+                document.getElementById("patternprint").innerHTML = "enter grater than 9";
+            }
+
+        }
+
+        function patternMapShow() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+            let pattern = "";
+
+            if (line > 9) {
+
+
+                if (line > 30) {
+                    document.body.style.zoom = "50%"
+                }
+                for (let i = 1; i <= line; i++) {
+                    for (let j = 1; j <= line * 6; j++) {
+
+                        if (j >= (line + 1) - i && j <= (line + 4) - i ||
+                            (j >= (line + 3) + i && j <= (line + 6) + i) ||
+                            (j >= ((line * 2) + 8 + line - 1 - i) && j <= (((line * 2) + 8 + line - 1) + 3 - i))
+                            || (j >= ((line * 2) + 8 + line - 1) + 3 && j <= ((line * 2) + 8 + line - 1) + 3 + line)
+                            || (i == Math.ceil(line / 2) && j >= line * 6 - 3) ||
+                            (i == Math.ceil((line / 2) + 1) && j >= line * 6 - 5 && j <= line * 6 - 2)
+                        ) {
+                            pattern += "*&nbsp;";
+                        } else {
+                            pattern += "&ensp;"
+                        }
+                    }
+                    pattern += "<br>";
+                }
+                document.getElementById("patternMapShow").innerHTML = pattern;
+            }
+            else {
+                document.getElementById("patternMapShow").innerHTML = "enter grater than 9";
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

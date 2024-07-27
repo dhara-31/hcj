@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div p id="patternprint">
+    </div>
+
+    <script>
+
+        callPattern();
+
+        function callPattern() {
+            let line = 5;
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j >= (line+1) - i) {
+                        pattern += "*";
+                    }
+                    else{
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            for (let k = 1; k < line; k++) {
+                for (let m = 1; m <= line; m++) {
+                    if (m > k) {
+                        pattern += "*";
+                    }
+                    else{
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+    </script>
+</body>
+
+</html>

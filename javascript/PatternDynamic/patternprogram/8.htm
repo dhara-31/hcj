@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div p id="patternprint">
+
+    </div>
+
+    <script>
+
+        eightPattern();
+    
+        function eightPattern() {
+            let pattern = "";
+            for (let i = 1; i <= 8; i++) {
+                for (let j = 1; j <= 8; j++) {
+                    if(i==j)
+                    {
+                        pattern += "&ensp;";
+                    }
+                    else
+                    {
+                    pattern += "*";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+
+    </script>
+</body>
+
+</html>

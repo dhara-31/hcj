@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="5">
+    <input type="submit" onclick="callDynmaic()" value="submit"></button>
+
+
+    <div p id="patternprint">
+
+    </div>
+
+    <div p id="patternprintd">
+
+    </div>
+
+    <script>
+
+        callPattern();
+        function callDynmaic() {
+            let pattern = "";
+            let count = 2;
+            let firstget = 0;
+    
+            let minusline = 0;
+
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let below = line-1;
+
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (i == 1) {
+                        pattern += "";
+                    }
+                    else {
+                        if (j < i) {
+                            if (j == 1) {
+                                count = i - 1 + firstget;
+                                pattern += count + 1;
+                                firstget = count;
+                            }
+                            else {
+                                pattern += count;
+                                count--;
+                            }
+                        }
+                        else {
+                            pattern += "&nbsp;";
+                        }
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let i = 1; i <= line-1; i++) {
+                for (let j = 1; j <= line-1; j++) {
+                    if (j <= line - i) {
+                        if (j == 1) {
+                            if (i == 1) {
+                                count = (firstget + 1);
+                                pattern += count;
+                                firstget = count;
+                            }
+                            else {
+                                count = (firstget) - below;
+                                pattern += count;
+                                firstget = count;
+                                minusline++;
+                                below = (line-1) - minusline;
+                            }
+                        }
+                        else {
+                            count--;
+                            pattern += count;
+                        }
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprintd").innerHTML = pattern;
+        }
+
+        function callPattern() {
+            let pattern = "";
+            let count = 2;
+            let firstget = 0;
+            let below = 4;
+            let minusline = 0;
+
+
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (i == 1) {
+                        pattern += "";
+                    }
+                    else {
+                        if (j < i) {
+                            if (j == 1) {
+                                count = i - 1 + firstget;
+                                pattern += count + 1;
+                                firstget = count;
+                            }
+                            else {
+                                pattern += count;
+                                count--;
+                            }
+                        }
+                        else {
+                            pattern += "&nbsp;";
+                        }
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let i = 1; i <= 4; i++) {
+                for (let j = 1; j <= 4; j++) {
+                    if (j <= 5 - i) {
+                        if (j == 1) {
+                            if (i == 1) {
+                                count = (firstget + 1);
+                                pattern += count;
+                                firstget = count;
+                            }
+                            else {
+                                count = (firstget) - below;
+                                pattern += count;
+                                firstget = count;
+                                minusline++;
+                                below = 4 - minusline;
+                            }
+                        }
+                        else {
+                            count--;
+                            pattern += count;
+                        }
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

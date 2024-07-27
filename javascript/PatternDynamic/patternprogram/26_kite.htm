@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div p id="patternprint">
+    </div>
+
+    <script>
+
+        callPattern();
+        
+
+        function callPattern() {
+            let line = 5;
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= (line * 2) - 1; j++) {
+                    if (i == 1) {
+                        pattern += "&nbsp;";
+                    }
+                    else if (j > 5 - i && j < 5 + i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            for (let k = 1; k < line - 1; k++) {
+                for (let m = 1; m <= (line * 2) - 1; m++) {
+                    if (m > k && m <= 9 - k) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let row = 1; row < (line /2 )+1; row++) {
+                for (let col = 1; col <= (line * 2) - 1; col++) {
+                    if (col > 5-row && col < 5 + row) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+    </script>
+</body>
+
+</html>

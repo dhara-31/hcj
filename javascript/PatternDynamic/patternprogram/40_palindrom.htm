@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" id="palin" value="" /><br>
+
+    <button type="sub" name="button" onclick="callmap()">
+        Submit
+    </button>
+
+    <p>output</p>
+    <div p id="patternprintmap1">
+    </div>
+    <script>
+
+        function callmap() {
+            let input = document.getElementById('palin').value;
+            let a = true;
+            let text = input;
+            input = input.toLowerCase();
+            console.log("input=======" + text + "==" + input);
+
+           input = input.replace(/\s/g, "")
+
+            for (let i = 0; i < Math.floor(input.length / 2); i++) {
+                console.log("inpu-----t" + input[i] + "====" + input[(input.length - 1) - i]);
+
+                if (input[i] != input[input.length - 1 - i]) {
+
+                    console.log("calll");
+                    a = false;
+                }
+            }
+
+            console.log("aa" + a);
+            if (a == true) {
+                text = "Palindrome"
+            }
+            else {
+                text = "not Palindrome"
+            }
+
+
+            document.getElementById("patternprintmap1").innerHTML = text;
+
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="5">
+    <input type="submit" onclick="dynamiccall()" value="submit"></button>
+
+
+    <div p id="patternprintmap">
+
+    </div>
+
+
+    <div p id="patternprint">
+
+    </div>
+
+    <script>
+
+        callmap();
+
+
+        function callmap() {
+
+            let pattern = "";
+            let line = 5;
+            let last = 0;
+            let count = 0;
+            let below = 0;
+
+
+            for (let i = 1; i <= 5; i++) {
+                last++;
+                for (let j = 1; j <= 10; j++) {
+
+                    if ((j == 6 - i)) {
+                        pattern += "A";
+                    }
+                    else if (j == 4 + i) {
+
+                        pattern += String.fromCharCode(last + 65);
+                        last++;
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+
+                }
+                pattern += "<br>";
+            }
+
+            for (let row = 1; row <= 4; row++) {
+                last = last - 2;
+                for (let col = 1; col <= 10; col++) {
+                    if ((col == row + 1)) {
+                        pattern += "A";
+                    }
+                    else if (col == 9 - row) {
+                        pattern += String.fromCharCode(last + 64);
+
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+
+                }
+                pattern += "<br>";
+            }
+
+
+
+            document.getElementById("patternprintmap").innerHTML = pattern;
+        }
+
+        function dynamiccall() {
+            let pattern = "";
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let last = 0;
+            let count = 0;
+            let below = 0;
+
+            if (line < 14) {
+
+                for (let i = 1; i <= line; i++) {
+                    last++;
+                    for (let j = 1; j <= line * 2; j++) {
+
+                        if ((j == (line + 1) - i)) {
+                            pattern += "A";
+                        }
+                        else if (j == (line - 1) + i) {
+
+                            pattern += String.fromCharCode(last + 65);
+                            last++;
+                        }
+                        else {
+                            pattern += "&ensp;";
+                        }
+                    }
+                    pattern += "<br>";
+                }
+
+                for (let row = 1; row <= line - 1; row++) {
+                    last = last - 2;
+                    for (let col = 1; col <= line * 2; col++) {
+                        if ((col == row + 1)) {
+                            pattern += "A";
+                        }
+                        else if (col == ((line * 2) - 1) - row) {
+                            pattern += String.fromCharCode(last + 64);
+                        }
+                        else {
+                            pattern += "&ensp;";
+                        }
+
+                    }
+                    pattern += "<br>";
+                }
+
+                document.getElementById("patternprint").innerHTML = pattern;
+            }
+            else {
+                document.getElementById("patternprint").innerHTML = "enter less than 14";
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

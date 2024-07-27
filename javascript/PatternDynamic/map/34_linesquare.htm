@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+
+
+    <input type="number" name="value" id="value" value="4">
+    <input type="submit" onclick="calldynamic()" value="submit"></button>
+
+    <div p id="patternprintmap">
+
+    </div>
+
+    <div p id="patternprint">
+    </div>
+
+
+
+    <script>
+
+        callmap();
+
+
+        function calldynamic() {
+            let pattern = "";
+
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+
+            if (line > 8) {
+                document.body.style.zoom = "50%"
+            }
+
+
+
+            if (line < 30) {
+                for (let i = 1; i <= line; i++) {
+
+                    for (let j = 1; j <= line * 30; j++) {
+
+                        if (j == i * 2 - 1 || j == (line * 4) - (i + (i - 1)) || j == (line * 4) + (i + (i - 1))
+                            || j == (line * 8) - (i + (i - 1)) || j == (line * 8) + (i + (i - 1))
+                            || j == (line * 12) - (i + (i - 1)) || j == (line * 12) + (i + (i - 1))
+                            || j == (line * 16) - (i + (i - 1)) || j == (line * 16) + (i + (i - 1))
+                            || j == (line * 20) - (i + (i - 1)) || j == (line * 20) + (i + (i - 1))
+                            || j == (line * 24) - (i + (i - 1)) || j == (line * 24) + (i + (i - 1)) || j == (line * 28) - (i + (i - 1))) {
+                            pattern += "}";
+                        }
+                        else if (j == (i * 2) || j == (line * 4) - (i + (i - 2)) || j == (line * 4) + (i + (i - 1) + 1)
+                            || j == (line * 8) - (i + (i - 2)) || j == (line * 8) + (i + (i - 1) + 1)
+                            || j == (line * 12) - (i + (i - 2)) || j == (line * 12) + (i + (i - 1) + 1)
+                            || j == (line * 16) - (i + (i - 2)) || j == (line * 16) + (i + (i - 1) + 1)
+                            || j == (line * 20) - (i + (i - 2)) || j == (line * 20) + (i + (i - 1) + 1)
+                            || j == (line * 24) - (i + (i - 2)) || j == (line * 24) + (i + (i - 1) + 1) || j == (line * 28) - (i + (i - 2))) {
+                            pattern += "{";
+                        }
+
+                        else {
+                            pattern += "&ensp;";
+                        }
+                    }
+                    pattern += "<br>";
+                }
+
+                for (let row = 1; row <= line; row++) {
+
+                    for (let jcol = 1; jcol <= line * 30; jcol++) {
+
+                        if (jcol == (line * 2) - row - (row - 1) ||
+
+                            jcol == (line * 2) + row + (row - 1)
+                            || jcol == (line * 6) - row - (row - 1)
+                            || jcol == (line * 6) + row + (row - 1)
+
+                            || jcol == (line * 10) - row - (row - 1)
+                            || jcol == (line * 10) + row + (row - 1)
+
+                            || jcol == (line * 14) - row - (row - 1)
+                            || jcol == (line * 14) + row + (row - 1)
+
+                            || jcol == (line * 18) - row - (row - 1)
+                            || jcol == (line * 18) + row + (row - 1)
+
+                            || jcol == (line * 22) - row - (row - 1)
+                            || jcol == (line * 22) + row + (row - 1)
+
+                            || jcol == (line * 26) - row - (row - 1)
+                            || jcol == (line * 26) + row + (row - 1)
+                        ) {
+                            pattern += "}";
+                        }
+                        else if (jcol == (line * 2) - row - (row - 2)
+                            || jcol == (line * 2) + row + (row)
+                            || jcol == (line * 6) - row - (row - 2)
+                            || jcol == (line * 6) + row + (row)
+                            || jcol == (line * 10) - row - (row - 2)
+                            || jcol == (line * 10) + row + (row)
+                            || jcol == (line * 14) - row - (row - 2)
+                            || jcol == (line * 14) + row + (row)
+
+                            || jcol == (line * 18) - row - (row - 2)
+                            || jcol == (line * 18) + row + (row)
+
+                            || jcol == (line * 22) - row - (row - 2)
+                            || jcol == (line * 22) + row + (row)
+
+                            || jcol == (line * 26) - row - (row - 2)
+                            || jcol == (line * 26) + row + (row)
+                        ) {
+                            pattern += "{";
+                        }
+                        else {
+                            pattern += "&ensp;";
+                        }
+                    }
+                    pattern += "<br>";
+                }
+
+                document.getElementById("patternprint").innerHTML = pattern;
+            }
+            else {
+                document.getElementById("patternprint").innerHTML = "eneter less than 30";
+            }
+        }
+
+
+
+
+        function callmap() {
+            let pattern = "";
+            let line = 5;
+
+            for (let i = 1; i <= 4; i++) {
+
+                for (let j = 1; j <= 120; j++) {
+
+                    if (j == i * 2 - 1 || j == 16 - (i + (i - 1)) || j == 16 + (i + (i - 1))
+                        || j == 32 - (i + (i - 1)) || j == 32 + (i + (i - 1))
+                        || j == 48 - (i + (i - 1)) || j == 48 + (i + (i - 1))
+                        || j == 64 - (i + (i - 1)) || j == 64 + (i + (i - 1))
+                        || j == 80 - (i + (i - 1)) || j == 80 + (i + (i - 1))
+                        || j == 96 - (i + (i - 1)) || j == 96 + (i + (i - 1)) || j == 112 - (i + (i - 1))) {
+                        pattern += "}";
+                    }
+                    else if (j == (i * 2) || j == 16 - (i + (i - 2)) || j == 16 + (i + (i - 1) + 1)
+                        || j == 32 - (i + (i - 2)) || j == 32 + (i + (i - 1) + 1)
+                        || j == 48 - (i + (i - 2)) || j == 48 + (i + (i - 1) + 1)
+                        || j == 64 - (i + (i - 2)) || j == 64 + (i + (i - 1) + 1)
+                        || j == 80 - (i + (i - 2)) || j == 80 + (i + (i - 1) + 1)
+                        || j == 96 - (i + (i - 2)) || j == 96 + (i + (i - 1) + 1) || j == 112 - (i + (i - 2))) {
+                        pattern += "{";
+                    }
+
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            for (let row = 1; row <= 4; row++) {
+
+                for (let jcol = 1; jcol <= 120; jcol++) {
+
+                    if (jcol == 8 - row - (row - 1) ||
+                        jcol == 8 + row + (row - 1)
+                        || jcol == 24 - row - (row - 1)
+                        || jcol == 24 + row + (row - 1)
+
+                        || jcol == 40 - row - (row - 1)
+                        || jcol == 40 + row + (row - 1)
+
+                        || jcol == 56 - row - (row - 1)
+                        || jcol == 56 + row + (row - 1)
+
+                        || jcol == 72 - row - (row - 1)
+                        || jcol == 72 + row + (row - 1)
+
+                        || jcol == 88 - row - (row - 1)
+                        || jcol == 88 + row + (row - 1)
+
+                        || jcol == 104 - row - (row - 1)
+                        || jcol == 104 + row + (row - 1)
+                    ) {
+                        pattern += "}";
+                    }
+                    else if (jcol == 8 - row - (row - 2)
+                        || jcol == 8 + row + (row)
+                        || jcol == 24 - row - (row - 2)
+                        || jcol == 24 + row + (row)
+                        || jcol == 40 - row - (row - 2)
+                        || jcol == 40 + row + (row)
+                        || jcol == 56 - row - (row - 2)
+                        || jcol == 56 + row + (row)
+
+                        || jcol == 72 - row - (row - 2)
+                        || jcol == 72 + row + (row)
+
+                        || jcol == 88 - row - (row - 2)
+                        || jcol == 88 + row + (row)
+
+                        || jcol == 104 - row - (row - 2)
+                        || jcol == 104 + row + (row)
+                    ) {
+                        pattern += "{";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprintmap").innerHTML = pattern;
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

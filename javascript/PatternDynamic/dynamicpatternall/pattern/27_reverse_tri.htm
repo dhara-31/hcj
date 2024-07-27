@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" name="value" id="value" value="5">
+    <input type="submit" onclick="dynamic()" value="submit">
+
+
+    <div p id="patternprint">
+    </div>
+    <div p id="patternprint1">
+    </div>
+    <script>
+
+
+        callPattern1();
+
+        function dynamic() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+            let pattern = "";
+            for (let i = 1; i <= (line * 2) - 1; i++) {
+                for (let j = 1; j < (line * 4) - 2; j++) {
+
+                    if ((i < line && j >= i && j <= (line*2) - i || i < line && j >= ((line * 2) - 2) + i && j < ((line * 4) - 1) - i) || (i >= line && j >= i && i >= line && j < ((line * 4) - 1) - i)) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint1").innerHTML = pattern;
+        }
+
+        function callPattern1() {
+            let line = 5;
+            let pattern = "";
+            for (let i = 1; i <= (line * 2) - 1; i++) {
+                for (let j = 1; j < (line * 4) - 2; j++) {
+
+                    if ((i < 5 && j >= i && j <= 10 - i || i < 5 && j >= 8 + i && j < 19 - i) || (i >= 5 && j >= i && i >= 5 && j < 19 - i)) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+<!-- // function callPattern() {
+    //     let line = 5;
+    //     let pattern = "";
+    //     Array((line*2)-2).fill().map((val, i) => {
+    
+    //         Array((line * 4) - 1).fill().map((val, j) => {
+    //             if ((i<4 && j >= i && j < 10-i || i<4 && j>8+i && j <18 -i) || (i>3 && j >= i && i>3 &&  j < 19 -i)) {
+    //                 pattern += "*";
+    //             }
+    //             else {
+    //                 pattern += "&ensp;";
+    //             }
+    //         })
+    //         pattern += "<br>";
+
+    //     });
+    //     document.getElementById("patternprint").innerHTML = pattern;
+    // } -->

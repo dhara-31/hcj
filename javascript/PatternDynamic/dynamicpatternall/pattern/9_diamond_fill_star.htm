@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" name="value" id="value" min="6" value="10">
+    <input type="submit" onclick="ninePattern()" value="submit"></button>
+
+    <div p id="patternprint">
+    </div>
+    
+    <script>
+   
+   ninePattern();
+        function ninePattern() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+
+            // if(line%2 != 0)
+            // {
+            //     line =line +1;
+            // }
+            for (let i = 1; i < line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j <= (Math.floor(line / 2) + 1) - i 
+                    || (i >= Math.floor(line / 2) && j <= i - Math.floor(line / 2) +1)
+                     || (i >= Math.floor(line / 2) && j > (line-1 +Math.floor(line / 2)) - i) 
+                     || j >= Math.floor(line / 2) + i) {
+                        pattern += "*";
+                    } else {
+                        pattern += "&ensp;"
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+
+
+
+        // function ninePattern() {
+        //     let getvalue = document.getElementById("value").value;
+        //     var line = parseInt(getvalue);
+        //     let pattern = "";
+        //     for (let i = 1; i < line; i++) {
+        //         for (let j = 1; j <= line; j++) {
+        //             if (j <= (Math.floor(line / 2) + 1) - i 
+        //             || (i >= Math.floor(line / 2) && j <= i - Math.floor(line / 2) +1)
+        //              || (i >= Math.floor(line / 2) && j > (line-1 +Math.floor(line / 2)) - i) 
+        //              || j >= Math.floor(line / 2) + i) {
+        //                 pattern += "*";
+        //             } else {
+        //                 pattern += "&ensp;"
+        //             }
+        //         }
+        //         pattern += "<br>";
+        //     }
+        //     document.getElementById("patternprint").innerHTML = pattern;
+        // }
+
+    </script>
+</body>
+
+</html>

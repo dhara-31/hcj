@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="5">
+    <input type="submit" onclick="callPattern()" value="submit"></button>
+
+
+    <div p id="patternprint">
+
+    </div>
+
+    <script>
+        callPattern();
+
+
+        function callPattern() {
+            let pattern = "";
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+
+
+            if (line < 27) {
+                Array(line + 1).fill().map((val, i) => {
+                    Array(i).fill().map((val, j) => {
+                        // pattern += String.fromCharCode( i + 64 ) + "&nbsp; ";
+                        pattern += "&ensp;" + String.fromCharCode(i + 64) + "&ensp; ";
+
+                    })
+                    pattern += "<br>";
+
+                });
+                document.getElementById("patternprint").innerHTML = pattern;
+            }
+            else {
+                document.getElementById("patternprint").innerHTML = "enter less than 27";
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="number" name="value" id="value" value="20">
+    <input type="submit" onclick="callPattern()" value="submit"></button>
+
+    <div p id="patternprint">
+
+    </div>
+
+    <script>
+
+      
+    callPattern();
+        function callPattern() {
+            let pattern = "";
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= (line*2)-1; j++) {
+
+                    if (j == (line+1)-i || i == line || j == (line-1)+i ) {
+                        pattern += "*";
+                    }
+                    else{
+                        pattern += "&ensp;";
+                    }
+                }
+
+                pattern += "<br>";
+            }
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+    </script>
+</body>
+
+</html>

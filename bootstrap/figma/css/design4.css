@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Nunito Sans 7pt';
+    src: url('../font/NunitoSans7pt-Regular.eot');
+    src: url('../font/NunitoSans7pt-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../font/NunitoSans7pt-Regular.woff2') format('woff2'),
+        url('../font/NunitoSans7pt-Regular.woff') format('woff'),
+        url('../font/NunitoSans7pt-Regular.ttf') format('truetype'),
+        url('../font/NunitoSans7pt-Regular.svg#NunitoSans7pt-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body ul  {
+    margin: 0;
+    padding: 0;
+}
+
+input[type=checkbox]{
+   border-color: #000;
+   border-radius: 0 !important;
+}
+
+.progress-bg {
+    background-color: #C73FFD;
+}
+
+.progress-color {
+    color: #C73FFD;
+}
+
+.text-gray {
+    color: #b9b5b5 !important;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+a,
+span,
+div a:hover,
+div a:active,
+div a:focus,
+button {
+    text-decoration: none;
+}
+
+/* Default css */
+.pro-bg {
+    background-color: #F9F9FB !important;
+}
+
+.small-text {
+    font-size: 14px;
+}
+
+.down-clas {
+    height: 25px;
+    width: 25px;
+}
+
+.inputborder {
+    border: 0.5px solid #D5D5D5;
+}
+
+
+.icon-keyboard:after {
+    content: "\f106";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 5px;
+}
+
+
+.before-line:first-child:before {
+    background-color: #045AFF;
+}
+
+
+.before-line:before {
+    content: "";
+    width: 15px;
+    background: #E5E5E5;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 20px;
+}
+
+.list-name.collapsed .icon-keyboard:after {
+    content: "\f107";
+}
+
+body {
+    background-color: #F0F1F6;
+    font-family: 'Nunito Sans 7pt';
+    color: #000;
+}
+
+body a {
+    outline: none;
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    font-family: 'Nunito Sans 7pt';
+    cursor: pointer
+}
+
+.img-keybiard {
+    height: 50px;
+    width: 50px;
+}
+
+
+.scrollit {
+    overflow-y:auto;
+    max-height:700px;
+}
+
+
+
+@media only screen and (max-width: 767px) {
+    .sidemenu {
+        height: 100%;
+        width: 310px;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: -100%;
+        background-color: var(--green);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    header {
+        padding-top: 5px;
+    }
+
+    .sidemenu.show {
+        left: 0;
+    }
+
+    .removebtn {
+        display: block;
+    }
+
+    .hedaer-notification {
+        display: none
+    }
+}

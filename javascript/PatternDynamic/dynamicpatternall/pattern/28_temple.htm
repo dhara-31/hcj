@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="8">
+    <input type="submit" onclick="dynamiccall()" value="submit"></button>
+
+
+
+    <div p id="patternprint1">
+    </div>
+    <div p id="patternprint">
+    </div>
+    <script>
+
+
+        callPattern1();
+
+
+        function callPattern1() {
+            let line = 5;
+            let pattern = "";
+
+            for (let i = 1; i <= 4; i++) {
+                for (let j = 1; j <= 8; j++) {
+
+                    if (i == 1 && j == 1) {
+                        pattern += "*";
+                    }
+                    else if (i > 1 && j >= 5 - i && j <= 3 + i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+
+            for (let row = 1; row <= 7; row++) {
+                for (let col = 1; col < 8; col++) {
+
+
+                    if (row <= 4 && col <= row || (row > 4 && col <= 8 - row) || (row <= 4 && col >= 8 - row && col > 4) || (row >= 4 && col >= row)) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+
+            for (let k = 1; k <= 4; k++) {
+                for (let m = 1; m <= 8; m++) {
+
+                    if (m >= k && m <= 8 - k) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint1").innerHTML = pattern;
+        }
+
+        function dynamiccall() {
+
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+            let pattern = "";
+
+            for (let i = 1; i <= line - 1; i++) {
+                for (let j = 1; j <= (line * 2) - 2; j++) {
+
+                    if (i == 1 && j == 1) {
+                        pattern += "*";
+                    }
+                    else if (i > 1 && j >= line - i && j < (line-1) + i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let row = 1; row <= (line * 2) - 3; row++) {
+                for (let col = 1; col < (line * 2) - 2; col++) {
+
+
+                    if (row <= line - 1 && col <= row || (row > line - 1 && col <= (line * 2) - 2 - row) || (row <= line - 1 && col >= (line * 2) - 2 - row && col > line - 1) || (row >= line - 1 && col >= row)) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+
+            for (let k = 1; k <= line - 1; k++) {
+                for (let m = 1; m <= (line * 2) - 2; m++) {
+
+                    if (m >= k && m <= (line * 2) - 2 - k) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+    </script>
+</body>
+
+</html>

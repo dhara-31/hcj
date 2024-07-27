@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div p id="patternprintmap">
+    </div>
+
+    <script>
+
+        callmap();
+
+
+        function callmap() {
+            let pattern = "";
+            let line = 5;
+
+            for (let i = 1; i <= 4; i++) {
+
+                for (let j = 1; j <= 60; j++) {
+
+                    if ( j == 4 + i ||
+                        j == 13 - i || j == 12 + i ||
+                        j == 21 - i || j == 20 + i ||
+                        j == 29 - i || j == 28 + i ||
+                        j == 37 - i || j == 36 + i ||
+                        j == 45 - i || j == 44 + i ||
+                        j == 53 - i || j == 52 + i || j == 61 - i) {
+                        pattern +="}{";
+                    }
+
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            for (let row = 1; row <= 4; row++) {
+
+                for (let col = 1; col <= 60; col++) {
+                    if ( col == 9 - row || col == 17 - row || col == 25 - row || col == 33 - row || col == 41 - row || col == 49 - row || col == 57 - row
+                        || col == 8 + row || col == 16 + row || col == 24 + row || col == 32 + row || col == 40 + row || col == 48 + row ||  col == 56 + row 
+                    ) {
+                        pattern += "*";
+                    }
+
+                    else {
+                        pattern += "&ensp;";
+                    }
+
+                }
+                pattern += "<br>";
+            }
+            
+            document.getElementById("patternprintmap").innerHTML = pattern;
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

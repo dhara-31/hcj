@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern</title>
+</head>
+<body>
+    <h2>pattern</h2>
+  Enter Number of Rows: <input type="number" id="input" placeholder="Enter number of rows">
+  <button type="button" onclick="submit()">Submit</button><br><br>
+  <div id="ex1"></div>
+    <script>
+        function submit() {
+            let n = Number(document.getElementById("input").value);
+            let output = "";
+            let str = "*"; 
+            let space = ' ';
+        output+=("<pre>")
+        for (let i = 2; i <= n; i++) { 
+            output+=(space.repeat((n - i)) + str.repeat(i * 2 - 1) + "<br>"); 
+        } 
+        for (let i = n - 1; i >= 1; i--) { 
+            output+=(space.repeat((n - i)) + str.repeat(i * 2 - 1) + "<br>"); 
+        }
+        for (let i = 2; i <= n-3; i++) {  
+            output+=(space.repeat((n - i)) + str.repeat(i * 2 - 1) + "<br>"); 
+        } 
+		document.getElementById("ex1").innerHTML = output;
+    }
+			 <!-- function submit(){ -->
+        <!-- const demo2 = document.getElementById("ex1") -->
+        <!-- const num = parseInt(document.getElementById("input").value); -->
+        <!-- let a = [0,1]; -->
+        <!-- let n = 10,sum; -->
+        <!-- for(let i=2;i<num;i++){ -->
+            <!-- sum = a[i-2] + a[i-1]; -->
+            <!-- a.push(sum);  -->
+        <!-- } -->
+      <!-- ex1.innerHTML = a; -->
+      <!-- } -->
+    </script>
+</body>
+</html> -->

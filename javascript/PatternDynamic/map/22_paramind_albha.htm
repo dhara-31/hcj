@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+        input {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            justify-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="number" name="value" id="value" value="9">
+    <input type="submit" onclick="dynamiccall()" value="submit"></button>
+    <input type="submit" onclick="patternMapShow()" value="map"></button>
+
+    <div p id="patternprintmap">
+
+    </div>
+
+    <div p id="patternprint">
+
+    </div>
+
+    
+    <div p id="patternMapShow">
+
+    </div>
+
+    <script>
+        callmap();
+
+        function callmap() {
+            let pattern = "";
+            let line = 6;
+            Array(line).fill().map((val, i) => {
+                let count = 0;
+                Array((line * 2) - 1).fill().map((val, j) => {
+                    if (j >= 6 - i && j <= 4 + i) {
+                        if (j >= 6 - i && j < 6) {
+                            count++;
+                            pattern += String.fromCharCode(count + 64);
+
+                        }
+                        else if (j <= 4 + i) {
+                            count--;
+                            pattern += String.fromCharCode(count + 64);
+                        }
+                    }
+                    else {
+                        pattern += "&ensp; ";
+                    }
+
+                })
+                pattern += "<br>";
+
+            });
+
+            document.getElementById("patternprintmap").innerHTML = pattern;
+        }
+
+
+        function dynamiccall() {
+            let pattern = "";
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            //  line = line +1;
+            if (line < 28) {
+                Array(line).fill().map((val, i) => {
+                    let count = 0;
+                    Array((line * 2) - 1).fill().map((val, j) => {
+                        if (j > line - i && j <= (line - 1) + i) {
+
+                            if (j >= line - i && j <= line) {
+                                count++;
+                                pattern += String.fromCharCode(count + 64);
+                            }
+                            else {
+                                count--;
+                                pattern += String.fromCharCode(count + 64);
+                            }
+
+                        }
+                        else {
+                            pattern += "&ensp; ";
+                        }
+
+                    })
+                    pattern += "<br>";
+
+                });
+
+                document.getElementById("patternprint").innerHTML = pattern;
+            }
+            else {
+                document.getElementById("patternprint").innerHTML = "enter less than 28";
+            }
+        }
+        function patternMapShow() {
+            let pattern = "";
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            //  line = line +1;
+            if (line < 28) {
+                Array(line).fill().map((val, i) => {
+                    let count = 0;
+                    Array((line * 2) - 1).fill().map((val, j) => {
+                        if (j > line - i && j <= (line - 1) + i) {
+
+                            if (j >= line - i && j <= line) {
+                                count++;
+                                pattern += String.fromCharCode(count + 64);
+                            }
+                            else {
+                                count--;
+                                pattern += String.fromCharCode(count + 64);
+                            }
+
+                        }
+                        else {
+                            pattern += "&ensp; ";
+                        }
+
+                    })
+                    pattern += "<br>";
+
+                });
+
+                document.getElementById("patternMapShow").innerHTML = pattern;
+            }
+            else {
+                document.getElementById("patternMapShow").innerHTML = "enter less than 28";
+            }
+        }
+ 
+ 
+ </script>
+</body>
+
+</html>

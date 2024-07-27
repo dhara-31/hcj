@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div p id="patternprint">
+
+    </div>
+
+    <script>
+
+        callPattern();
+
+        function callPattern() {
+            let pattern = "";
+            let count = 2;
+            let firstget = 0;
+            let below = 4;
+            let minusline = 0;
+
+
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 1; j <= 5; j++) {
+                    if (i == 1) {
+                        pattern += "";
+                    }
+                    else {
+                        if (j < i) {
+                            if (j == 1) {
+                                count = i - 1 + firstget;
+                                pattern += count + 1;
+                                firstget = count;
+                            }
+                            else {
+                                pattern += count;
+                                count--;
+                            }
+                        }
+                        else {
+                            pattern += "&nbsp;";
+                        }
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let i = 1; i <= 4; i++) {
+                for (let j = 1; j <= 4; j++) {
+                    if (j <= 5 - i) {
+                        if (j == 1) {
+                            if (i == 1) {
+                                count = (firstget + 1);
+                                pattern += count;
+                                firstget = count;
+                            }
+                            else {
+                                count = (firstget) - below;
+                                pattern += count;
+                                firstget = count;
+                                minusline++;
+                                below = 4 - minusline;
+                            }
+                        }
+                        else {
+                            count--;
+                            pattern += count;
+                        }
+                    }
+                    else {
+                        pattern += "&nbsp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+    </script>
+</body>
+
+</html>

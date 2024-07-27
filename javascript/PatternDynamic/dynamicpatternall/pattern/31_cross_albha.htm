@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="6">
+    <input type="submit" onclick="dynamic()" value="submit">
+
+    <div p id="patternprint">
+
+    </div>
+    <div p id="patternprintd">
+
+    </div>
+
+
+    <script>
+
+        call();
+
+        function dynamic() {
+
+            let pattern = "";
+
+            let count = 0;
+            let albha = 1;
+
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+
+            if (line < 13) {
+
+                for (let i = 1; i <= line; i++) {
+                    count = 1;
+                    for (let j = 1; j <= (line * 2) + 1; j++) {
+
+                        if (i == 1) {
+                            pattern += String.fromCharCode(j + 64);
+                        }
+                        else if (j == i) {
+                            pattern += "&ensp;" + "A";
+                        }
+                        else if (j == ((line * 2) + 3) - i) {
+                            count = j - i;
+                            pattern += String.fromCharCode(count + 64);
+                            count++;
+                        }
+                        else {
+                            pattern += "&ensp;";
+                        }
+                    }
+                    pattern += "<br>";
+                }
+
+
+                for (let k = 1; k <= line + 1; k++) {
+                    for (let m = 1; m <= (line * 2) + 1; m++) {
+
+                        if (k == line + 1) {
+                            pattern += String.fromCharCode(m + 64);
+                        }
+                        else if (m == (line + 2) - k) {
+                            if (k == 1) {
+                                pattern += "&ensp;" + "&ensp;" + "A";
+                            }
+                            else {
+                                pattern += "&ensp;" + "A";
+                            }
+
+                        }
+                        else if (m == line + 1 + k) {
+                            if (k > 1) {
+                                pattern += String.fromCharCode(albha + 64);
+                            }
+                            albha = albha + 2;
+                        }
+                        else {
+                            pattern += "&ensp;";
+                        }
+                    }
+                    pattern += "<br>";
+                }
+
+                document.getElementById("patternprintd").innerHTML = pattern;
+            }
+            else {
+                document.getElementById("patternprintd").innerHTML = "enter less than 13";
+            }
+        }
+
+
+        function call() {
+
+            let pattern = "";
+            let line = 10;
+            let count = 0;
+            let albha = 1;
+
+            for (let i = 1; i <= 4; i++) {
+                count = 1;
+                for (let j = 1; j <= 9; j++) {
+
+                    if (i == 1) {
+                        pattern += String.fromCharCode(j + 64);
+                    }
+                    else if (j == i) {
+                        pattern += "&ensp;" + "A";
+                    }
+                    else if (j == 11 - i) {
+                        count = j - i;
+                        pattern += String.fromCharCode(count + 64);
+                        count++;
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+
+            for (let k = 1; k <= 5; k++) {
+                for (let m = 1; m <= 9; m++) {
+
+                    if (k == 5) {
+                        pattern += String.fromCharCode(m + 64);
+                    }
+                    else if (m == 6 - k) {
+                        if (k == 1) {
+                            pattern += "&ensp;" + "&ensp;" + "A";
+                        }
+                        else {
+                            pattern += "&ensp;" + "A";
+                        }
+
+                    }
+                    else if (m == 5 + k) {
+                        if (k > 1) {
+                            pattern += String.fromCharCode(albha + 64);
+                        }
+                        albha = albha + 2;
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+    </script>
+</body>
+
+</html>

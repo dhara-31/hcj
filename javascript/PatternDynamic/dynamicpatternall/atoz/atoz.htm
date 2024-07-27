@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 30px;
+        }
+
+        .main {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="number" name="value" id="value" value="13">
+    <input type="submit" onclick="callA(),callB(),callC(),callD(),callE(),callF(),callG(),callH(),callI(),callJ(),callK(),callL() ,callM(),callN(),
+    callO(),callP(),callQ() ,callR(),callS(),callT() ,callU(),callV(),callW(),callX(),callY(),callZ()"
+        value="submit"></button>
+
+    <div class="main">
+        <div p id="a"></div>
+        <div p id="b"></div>
+        <div p id="c"></div>
+        <div p id="d"></div>
+        <div p id="e"></div>
+        <div p id="f"></div>
+
+
+    </div>
+
+    <div class="main">
+        <div p id="g"></div>
+        <div p id="h"></div>
+        <div p id="i"></div>
+        <div p id="j"></div>
+        <div p id="k"></div>
+        <div p id="l"></div>
+
+    </div>
+
+    <div class="main">
+        <div p id="m"></div>
+        <div p id="n"></div>
+        <div p id="o"></div>
+        <div p id="p"></div>
+        <div p id="q"></div>
+        <div p id="r"></div>
+
+    </div>
+
+    <div class="main">
+        <div p id="s"></div>
+        <div p id="t"></div>
+        <div p id="u"></div>
+        <div p id="v"></div>
+        <div p id="w"></div>
+        <div p id="x"></div>
+
+    </div>
+
+    <div class="main">
+        <div p id="y"></div>
+        <div p id="z"></div>
+
+
+    </div>
+
+    <script>
+        let getvalue = document.getElementById("value").value;
+        var line = parseInt(getvalue);
+        if (line > 20) {
+            document.body.style.zoom = "50%"
+        }
+        callA();
+        callB();
+        callC();
+        callD();
+        callE();
+        callF();
+        callG();
+        callH();
+        callI();
+        callJ();
+        callK();
+        callL();
+        callM();
+        callN();
+        callO();
+        callP();
+        callQ();
+        callR();
+        callS();
+        callT();
+        callU();
+        callV();
+        callW();
+        callX();
+        callY();
+        callZ();
+
+        function callA() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= (line * 2) - 1; j++) {
+
+                    if (j == (line + 1) - i || i == Math.floor(line / 2) && j > (line + 1) - i && j < (line - 1) + i || j == (line - 1) + i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("a").innerHTML = pattern;
+        }
+
+        function callB() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 || i == 1 || i == line || i == Math.floor(line / 2) + 1 || j == line) {
+
+                        if (j == line && i == 1 || i == line && j == line) {
+                            pattern += "&ensp;";
+                        }
+                        else {
+                            pattern += "*";
+                        }
+
+
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("b").innerHTML = pattern;
+        }
+
+        function callC() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 || i == 1 || i == line) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("c").innerHTML = pattern;
+        }
+        function callD() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 + 1 || i == 1 || i == line || j == line) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("d").innerHTML = pattern;
+        }
+
+        function callE() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 || i == 1 || i == line || i == Math.floor(line / 2) + 1) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("e").innerHTML = pattern;
+        }
+
+        function callF() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 || i == 1 || i == Math.floor(line / 2) + 1) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("f").innerHTML = pattern;
+        }
+
+
+        function callG() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            let row = '';
+            for (let i = 1; i <= line; i++) {
+
+                for (let j = 1; j <= line * 2 - 1; j++) {
+                    if (i == 1 && j <= line ||
+                        j == 1 ||
+                        i == line && j <= line
+                        || i >= Math.ceil(line / 2) && j == line ||
+                        i == Math.ceil(line / 2) && j > Math.floor(line / 2) + 1) {
+                        if (j == 1 && i == 1 || i == line && j == 1 || i == line && j == line) {
+                            pattern += "&ensp;";
+                        }
+                        else {
+                            pattern += "*";
+                        }
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("g").innerHTML = pattern;
+        }
+
+        function callH() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 || i == Math.floor(line / 2) + 1 || j == line) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("h").innerHTML = pattern;
+        }
+
+
+        function callI() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (i == 1 || i == line || j == Math.floor(line / 2) + 1) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("i").innerHTML = pattern;
+        }
+
+        function callJ() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (i == 1 || (i == line && j <= Math.floor(line / 2)) || j == Math.floor(line / 2) + 1 || j == 1 && i >= Math.ceil(line / 2) + 2) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("j").innerHTML = pattern;
+        }
+
+
+        function callK() {
+
+            const checkoddeven = (d) => {
+                console.log(d < 0 ? -1 * d : d);
+                return d < 0 ? -1 * d : d;
+            }
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            let i, j, valuecheck = parseInt(line / 2);
+            for (i = 0; i < line; i++) {
+                pattern += "*";
+                for (j = 0; j <= parseInt(line / 2); j++) {       
+                    if (j == checkoddeven(valuecheck)) {
+        
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+                valuecheck--;
+            }
+            document.getElementById("k").innerHTML = pattern;
+
+        }
+
+        function callL() {
+
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (i == line || j == 1) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("l").innerHTML = pattern;
+        }
+
+
+
+        function callM() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            let value;
+
+            if (line % 2 == 0) {
+                value = Math.floor(line / 2);
+            }
+            else {
+                value = Math.floor(line / 2) + 1;
+            }
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 || j == i && i <= Math.floor(line / 2) || j == Math.floor(line) + 1 - i && i <= value || j == line) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("m").innerHTML = pattern;
+        }
+
+
+        function callN() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 || j == i || j == line) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("n").innerHTML = pattern;
+        }
+
+
+        function callO() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j == 1 || i == 1 || i == line || j == line) {
+
+                        if (j == 1 && i == 1 || i == 1 && j == line || i == line && j == 1 || j == line && i == line) {
+                            pattern += "&ensp;";
+                        } else {
+                            pattern += "*";
+                        }
+
+
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("o").innerHTML = pattern;
+        }
+
+
+        function callP() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j == 1 || i == 1 || i == Math.floor(line / 2) || j == line && i <= Math.floor(line / 2)) {
+
+                        if (i == 1 && j == line || j == line && i == Math.floor(line / 2)) {
+                            pattern += "&ensp;";
+                        } else {
+                            pattern += "*";
+                        }
+
+
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("p").innerHTML = pattern;
+        }
+
+
+        function callQ() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j == 1 || i == 1 || i == line - 1 || j == line || j == i && i >= Math.floor(line / 2) + 1) {
+
+                        if (j == 1 && i == 1 || i == 1 && j == line || (i == line && j == 1) || (i == line - 1 && j == 1) || (i == line - 1 && j == line)) {
+                            pattern += "&ensp;";
+                        } else {
+                            pattern += "*";
+                        }
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("q").innerHTML = pattern;
+        }
+
+
+
+        function callR() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j == 1 || i == 1 || i == Math.floor(line / 2) || j == line && i <= Math.floor(line / 2) || j == i && i >= Math.floor(line / 2) + 1) {
+
+                        if (i == 1 && j == line || j == line && i == Math.floor(line / 2)) {
+                            pattern += "&ensp;";
+                        } else {
+                            pattern += "*";
+                        }
+
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("r").innerHTML = pattern;
+        }
+
+        function callS() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if ((j == 1 && i <= Math.floor(line / 2) + 1) || i == 1 || i == Math.floor(line / 2) + 1 || j == line && i >= Math.floor(line / 2) || i == line) {
+
+                        if (i == 1 && j == line || j == line && i == Math.floor(line / 2)) {
+                            pattern += "&ensp;";
+                        } else {
+                            pattern += "*";
+                        }
+
+
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("s").innerHTML = pattern;
+        }
+
+
+        function callT() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (i == 1 || j == Math.floor(line / 2) + 1) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("t").innerHTML = pattern;
+        }
+
+        function callU() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+                    if (j == 1 || i == line || j == line) {
+
+                        if (i == line && j == 1 || j == line && i == line) {
+                            pattern += "&ensp;";
+                        } else {
+                            pattern += "*";
+                        }
+
+
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("u").innerHTML = pattern;
+        }
+
+
+        function callV() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line * 2; j++) {
+
+                    if (j == i || j == line * 2 - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("v").innerHTML = pattern;
+        }
+
+        function callW() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == 1 || j == line || j == i && i > Math.floor(line / 2) || j == Math.floor(line) + 1 - i && i > Math.floor(line / 2)) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("w").innerHTML = pattern;
+        }
+
+
+
+        function callX() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line * 2; j++) {
+
+                    if (j == i || j == Math.floor(line) + 1 - i) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("x").innerHTML = pattern;
+        }
+
+
+        function callY() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (j == i && i <= Math.floor(line / 2) || j == Math.floor(line) - i && i <= Math.floor(line / 2) || j == Math.floor(line / 2) && i >= Math.floor(line / 2)
+                    ) {
+
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("y").innerHTML = pattern;
+        }
+
+        function callZ() {
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+            let pattern = "";
+            for (let i = 1; i <= line; i++) {
+                for (let j = 1; j <= line; j++) {
+
+                    if (i == 1 || j == Math.floor(line) + 1 - i || i == line) {
+                        pattern += "*";
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                }
+                pattern += "<br>";
+            }
+            document.getElementById("z").innerHTML = pattern;
+        }
+
+
+    </script>
+</body>
+
+</html>

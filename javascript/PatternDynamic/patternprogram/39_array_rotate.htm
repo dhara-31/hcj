@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+
+        button {
+            padding: 20px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <input type="text" name="array[]" value="" /><br>
+    <input type="text" name="array[]" value=""  /><br>
+    <input type="text" name="array[]" value=""  /><br>
+    <input type="text" name="array[]" value="" /><br>
+    <input type="text" name="array[]" value="" /><br>
+    <button type="sub" name="button" onclick="callmap()">
+        Submit
+    </button>
+
+    <p>input</p>
+    <div p id="patternprintmap">
+    </div>
+
+    <p>output</p>
+    <div p id="patternprintmap1">
+    </div>
+    <script>
+
+        function callmap() {
+            let input = document.getElementsByName('array[]');
+            let a ;
+            let arryget = [];
+            for (let i = 0; i < input.length; i++) {
+                let a = input[i];
+                arryget.push(a.value);
+            }
+
+            document.getElementById("patternprintmap").innerHTML = arryget;
+            arryget.push(input[0].value);
+            arryget.shift();
+            document.getElementById("patternprintmap1").innerHTML = arryget;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div p id="patternprint">
+    </div>
+
+    <script>
+
+        callPattern();
+
+        function callPattern() {
+            let pattern = "";
+            let line = 5;
+
+            Array(line).fill().map((val, i) => {
+                Array(line).fill().map((val, j) => {
+ 
+                    if(i==0 || i == line-1 || j==0 || j==line-1)
+                    {
+                          pattern += String.fromCharCode( j + 65 ) ;
+                    }
+                    else{
+                        pattern += "&ensp; ";
+                    }
+                
+                })
+                pattern += "<br>";
+               
+            });
+            document.getElementById("patternprint").innerHTML = pattern;
+        }
+
+
+    </script>
+</body>
+
+</html>

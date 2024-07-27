@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+    <title>Tem 2</title>
+    <meta charset="UTF-8" />
+    <meta name="title" content="Website Name">
+    <meta name="description" content="Website description">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        div {
+            padding: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" name="value" id="value" value="5">
+    <input type="submit" onclick="callmap()" value="submit"></button>
+
+
+    <div p id="patternprintmap">
+    </div>
+
+    <div p id="patternprint">
+    </div>
+
+    <script>
+    
+        callmap();
+        function callmap() {
+            let pattern = "";
+            let getvalue = document.getElementById("value").value;
+            var line = parseInt(getvalue);
+
+            if(line < 11)
+            {
+
+            Array(line).fill().map((val, i) => {
+                let  count = i+1 ;
+                Array(line*2).fill().map((val, j) => {
+                    if (j <= i) {
+                       pattern += j+1;
+                    }
+                   else if(j >= ((line*2)-1)-i)
+                    { 
+                        pattern += count;
+                        count--;
+                    }
+                    else {
+                        pattern += "&ensp;";
+                    }
+                })
+                pattern += "<br>";
+
+            });
+
+            document.getElementById("patternprintmap").innerHTML = pattern;
+        }
+        else{
+            document.getElementById("patternprintmap").innerHTML = "enter less than 11";  
+        }
+        }
+    </script>
+</body>
+
+</html>
